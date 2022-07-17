@@ -13,7 +13,6 @@ function Homepage() {
   const globalStats = data?.data?.stats;
 
   if (isFetching) return "Loading...";
-  console.log(data);
 
   return (
     <React.Fragment>

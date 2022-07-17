@@ -20,8 +20,6 @@ function Cryptocurrencies({ simplified }) {
 
   if (isFetching) return "Loading...";
 
-  console.log(cryptos);
-
   return (
     <React.Fragment>
       {!simplified && (
