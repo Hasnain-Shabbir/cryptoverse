@@ -20,8 +20,6 @@ function News({ simplified }) {
 
   if (!cryptoNews?.value) return "Loading...";
 
-  console.log(cryptoNews);
-
   return (
     <React.Fragment>
       <Row gutter={[24, 24]}>

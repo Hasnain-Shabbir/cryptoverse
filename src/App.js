@@ -26,22 +26,11 @@ function App() {
         <Layout>
           <div className="routes">
             <Routes>
-              {/* Home Page */}
               <Route path="/" exact element={<Homepage />} />
-
-              {/* Cryptocurrencies Page */}
-              <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-
-              {/* Exchanges Page */}
-              <Route path="/exchanges" element={<Exchanges />} />
-
-              {/* Crypto Page */}
-              <Route path="/crypto">
-                <Route path=":coinId" element={<CryptoDetails />} />
-              </Route>
-
-              {/* News Page */}
-              <Route path="/news" element={<News />} />
+              <Route path="cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route path="exchanges" element={<Exchanges />} />
+              <Route path="crypto/:coinId" element={<CryptoDetails />} />
+              <Route path="news" element={<News />} />
             </Routes>
           </div>
         </Layout>
