@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
 // Components
-import { Navbar } from "./components";
+import { Navbar } from "./components/components";
 
 import {
   Exchanges,
