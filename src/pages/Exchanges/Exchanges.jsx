@@ -1,10 +1,9 @@
 import React from 'react';
 import millify from 'millify';
-import { Collapse, Row, Col, Typography } from 'antd';
+import { Collapse, Row, Col } from 'antd';
 import { useGetCryptoExchangesQuery } from '../../services/cryptoExchangeApi';
-// import Loader from './Loader';
+import { Loader } from '../../components/components';
 
-const { Text } = Typography;
 const { Panel } = Collapse;
 
 const Exchanges = () => {
@@ -18,7 +17,7 @@ const Exchanges = () => {
     }
   });
 
-  if (isFetching) return 'loading';
+  if (isFetching) return <Loader />;
 
   return (
     <React.Fragment>
@@ -39,7 +38,6 @@ const Exchanges = () => {
                 header={
                   <Row>
                     <Col span={6}>{exchange.name}</Col>
-                    {/* <Col span={6}>{exchange.currencies}</Col> */}
                     <Col span={6}>
                       ${millify(exchange.quotes.USD.adjusted_volume_24h)}
                     </Col>
