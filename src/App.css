@@ -375,3 +375,17 @@ a:hover {
   padding: 20px;
   align-items: center;
 }
+
+.collapse-header-container .ant-collapse-header-text {
+  width: 100% !important;
+}
+
+.collapse-title-container {
+  padding: 0 20px 0 5px;
+  margin-bottom: 10px;
+}
+
+.collapse-title-container .ant-col {
+  font-size: 16px;
+  font-weight: 500;
+}

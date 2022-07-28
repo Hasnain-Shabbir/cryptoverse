@@ -1,8 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import { Routes, Route, Link } from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
 
 // Components
-import { Navbar } from "./components/components";
+import { Navbar } from './components/components';
 
 import {
   Exchanges,
@@ -10,44 +10,44 @@ import {
   News,
   CryptoDetails,
   Cryptocurrencies,
-} from "./pages/pages";
+} from './pages/pages';
 
 // Styles
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <div className="navbar">
+    <div className='app'>
+      <div className='navbar'>
         <Navbar />
       </div>
 
-      <div className="main">
+      <div className='main'>
         <Layout>
-          <div className="routes">
+          <div className='routes'>
             <Routes>
-              <Route path="/" exact element={<Homepage />} />
-              <Route path="cryptocurrencies" element={<Cryptocurrencies />} />
-              <Route path="exchanges" element={<Exchanges />} />
-              <Route path="crypto/:coinId" element={<CryptoDetails />} />
-              <Route path="news" element={<News />} />
+              <Route path='/' exact element={<Homepage />} />
+              <Route path='cryptocurrencies' element={<Cryptocurrencies />} />
+              <Route path='exchanges' element={<Exchanges />} />
+              <Route path='crypto/:coinId' element={<CryptoDetails />} />
+              <Route path='news' element={<News />} />
             </Routes>
           </div>
         </Layout>
 
-        <div className="footer">
+        <div className='footer'>
           <Typography.Title
             level={5}
-            style={{ color: "white", textAlign: "center" }}
+            style={{ color: 'white', textAlign: 'center' }}
           >
             Cryptoverse <br />
             All rights reserved.
           </Typography.Title>
 
           <Space>
-            <Link to="/">Home</Link>
-            <Link to="/exchanges">Exchanges</Link>
-            <Link to="/news">News</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/exchanges'>Exchanges</Link>
+            <Link to='/news'>News</Link>
           </Space>
         </div>
       </div>
