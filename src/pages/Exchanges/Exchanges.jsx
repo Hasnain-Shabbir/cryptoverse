@@ -9,12 +9,13 @@ const { Panel } = Collapse;
 const Exchanges = () => {
   const { data, isFetching } = useGetCryptoExchangesQuery();
   const exchanges = [];
-  const exchangesList = data?.filter((exchange) => {
-    if (exchange.description && exchange.adjusted_rank) {
-      if (exchange.description.length > 50 && exchange.adjusted_rank < 100) {
-        exchanges.push(exchange);
-      }
-    }
+
+  data?.filter((exchange) => {
+    return exchange.description && exchange.adjusted_rank
+      ? exchange.description.length > 50 && exchange.adjusted_rank < 100
+        ? exchanges.push(exchange)
+        : null
+      : null;
   });
 
   if (isFetching) return <Loader />;
