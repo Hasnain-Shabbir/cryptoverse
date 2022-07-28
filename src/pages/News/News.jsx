@@ -38,8 +38,8 @@ function News({ simplified }) {
             >
               <Option value='Cryptocurrency'>Cryptocurrency</Option>
               {data?.data?.coins.map((coin) => (
-                <Option value={coin.name} key={coin.name}>
-                  {coin.name}
+                <Option value={coin?.name} key={coin?.name}>
+                  {coin?.name}
                 </Option>
               ))}
             </Select>
@@ -49,10 +49,10 @@ function News({ simplified }) {
         {cryptoNews.value.map((news, i) => (
           <Col xs={24} sm={12} lg={8} key={i}>
             <Card hoverable className='news-card'>
-              <a href={news.url} target='_blank' rel='noreferrer'>
+              <a href={news?.url} target='_blank' rel='noreferrer'>
                 <div className='news-image-container'>
                   <Title className='news-title' level={4}>
-                    {news.name}
+                    {news?.name}
                   </Title>
                   <img
                     style={{ maxWidth: '200px', maxHeight: '100px' }}
@@ -61,22 +61,21 @@ function News({ simplified }) {
                   />
                 </div>
                 <p>
-                  {news.description > 50
-                    ? `${news.description.substring(0, 10)}...`
-                    : news.description}
+                  {news?.description > 50
+                    ? `${news?.description.substring(0, 10)}...`
+                    : news?.description}
                 </p>
                 <div className='provider-container'>
                   <div>
                     <Avatar
-                      src={news.provider[0]?.image?.thumbnail?.contentUrl}
+                      src={news?.provider[0]?.image?.thumbnail?.contentUrl}
                     />
                     <Text className='provider-name'>
-                      {' '}
-                      {news.provider[0]?.name}{' '}
+                      {news?.provider[0]?.name}
                     </Text>
                   </div>
                   <Text>
-                    {moment(news.datePublished).startOf('ss').fromNow()}
+                    {moment(news?.datePublished).startOf('ss').fromNow()}
                   </Text>
                 </div>
               </a>

@@ -11,8 +11,8 @@ const Exchanges = () => {
   const exchanges = [];
 
   data?.filter((exchange) => {
-    return exchange.description && exchange.adjusted_rank
-      ? exchange.description.length > 50 && exchange.adjusted_rank < 100
+    return exchange?.description && exchange?.adjusted_rank
+      ? exchange?.description?.length > 50 && exchange?.adjusted_rank < 100
         ? exchanges.push(exchange)
         : null
       : null;
@@ -29,8 +29,8 @@ const Exchanges = () => {
         <Col span={6}>Rank</Col>
       </Row>
       <Row>
-        {exchanges.map((exchange) => (
-          <Col span={24} key={exchange.id}>
+        {exchanges?.map((exchange) => (
+          <Col span={24} key={exchange?.id}>
             <Collapse>
               <Panel
                 showArrow={false}
@@ -38,16 +38,16 @@ const Exchanges = () => {
                 className='collapse-header-container'
                 header={
                   <Row>
-                    <Col span={6}>{exchange.name}</Col>
+                    <Col span={6}>{exchange?.name}</Col>
                     <Col span={6}>
-                      ${millify(exchange.quotes.USD.adjusted_volume_24h)}
+                      ${millify(exchange?.quotes?.USD?.adjusted_volume_24h)}
                     </Col>
-                    <Col span={6}>{exchange.markets}</Col>
-                    <Col span={6}>{exchange.adjusted_rank}</Col>
+                    <Col span={6}>{exchange?.markets}</Col>
+                    <Col span={6}>{exchange?.adjusted_rank}</Col>
                   </Row>
                 }
               >
-                {exchange.description}
+                {exchange?.description}
               </Panel>
             </Collapse>
           </Col>

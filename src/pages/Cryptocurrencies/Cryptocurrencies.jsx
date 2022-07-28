@@ -13,7 +13,7 @@ function Cryptocurrencies({ simplified }) {
 
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
-      coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+      coin?.name?.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setCryptos(filteredData);
@@ -38,23 +38,23 @@ function Cryptocurrencies({ simplified }) {
             sm={12}
             lg={6}
             className='crypto-card'
-            key={currency.rank}
+            key={currency?.rank}
           >
-            <Link to={`/crypto/${currency.uuid}`}>
+            <Link to={`/crypto/${currency?.uuid}`}>
               <Card
-                title={`${currency.rank}. ${currency.name}`}
+                title={`${currency?.rank}. ${currency?.name}`}
                 extra={
                   <img
                     className='crypto-image'
-                    src={currency.iconUrl}
+                    src={currency?.iconUrl}
                     alt='crypto_image'
                   />
                 }
                 hoverable
               >
-                <p>Price: {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}%</p>
+                <p>Price: {millify(currency?.price)}</p>
+                <p>Market Cap: {millify(currency?.marketCap)}</p>
+                <p>Daily Change: {millify(currency?.change)}%</p>
               </Card>
             </Link>
           </Col>
