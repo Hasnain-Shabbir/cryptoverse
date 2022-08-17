@@ -12,7 +12,7 @@ import {
 import icon from '../../images/cryptocurrency.png';
 
 const Navbar = () => {
-  const [activeMenu, setActiveMenu] = useState(true);
+  const [activeMenu, setActiveMenu] = useState(false);
   const [screenSize, setScreenSize] = useState(null);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ const Navbar = () => {
         <Button
           className='menu-control-container'
           onClick={() => setActiveMenu(!activeMenu)}
+          style={{ height: '40px' }}
         >
           <MenuOutlined />
         </Button>
